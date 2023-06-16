@@ -90,18 +90,18 @@ header img {
 
 /* End Header  */
 
-.ingredient-content {
+.ingred-serving {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     max-width: 100%;
-    padding-top: 3rem;
 }
 
 @media(min-width: 768px) {
-    .ingredient-content {
-        flex-direction: row-reverse
+    .ingred-serving {
+        flex-direction: row-reverse;
+        padding-top: 3rem;
     }
 }
 
@@ -110,15 +110,17 @@ header img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    flex-basis: 300px;
-    height: 300px;
-
+    margin-bottom: 2rem;
 }
 
 @media(min-width: 768px) {
     .serving {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         border-radius: 10px;
+        padding: 2rem 1rem;
+        height: 300px;
+        flex-basis: 350px;
+
         /* justify-content: center;
         /* align-items: center; */
     }
@@ -191,7 +193,9 @@ header img {
 }
 
 /* End Serving */
-.ingred-instruct {}
+.ingred-serving {
+    display: flex;
+}
 
 /* start ingredients */
 .ingredients {
@@ -204,7 +208,6 @@ header img {
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;
-    margin-bottom: 2rem;
 
 }
 
@@ -214,7 +217,7 @@ header img {
     font-style: italic;
     font-size: 16px;
     line-height: 21px;
-    padding: 2rem 0;
+    padding: 1rem 0 2rem;
 }
 
 @media(min-width: 768px) {
@@ -260,3 +263,79 @@ header img {
 }
 
 /* End ingredients */
+
+/* Start Instruction */
+.instructions {
+    padding: 2rem 0 1rem;
+}
+
+.instructions h2 {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height */
+
+
+    /* Gray 1 */
+
+    color: var(--gray1);
+    margin-bottom: 2rem;
+
+}
+
+.instructions ol {
+    list-style: none;
+    counter-reset: item;
+}
+
+li {
+    counter-increment: item;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+li:before {
+    content: counter(item);
+    display: block;
+    margin-right: .75rem;
+    background-color: var(--orange);
+    color: white;
+    font-weight: bold;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 32px;
+
+    text-align: center;
+    padding: 12px;
+    padding-top: 0px;
+    padding-bottom: 6px;
+
+    border-radius: 4px;
+
+}
+
+/* End Instruction */
+
+.source {
+    font-size: 12px;
+    line-height: 150%;
+
+
+    color: var(--gray4)
+}
+
+footer {
+    color: rgba(130, 130, 130, 1);
+    text-align: center;
+    margin-top: 4rem;
+
+}
