@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --orange: #F2994A;
+    --gray4: #BDBDBD;
+    --gray1: #333;
+}
+
+body {
+    padding: 1rem;
+    font-family: 'Montserrat';
+    margin: 0 auto;
+}
+
+@media(min-width: 678px) {
+    body {
+        max-width: 720px;
+    }
+}
+
+@media(min-width: 991px) {
+    body {
+        max-width: 960px;
+    }
+}
+
+@media(min-width: 1200px) {
+    body {
+        max-width: 1140px;
+    }
+}
+
+/* Start Header  */
+header {
+    padding: 1rem 0;
+}
+
+header h1 {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+@media(min-width: 678px) {
+    header h1 {
+        font-size: 3rem;
+    }
+}
+
+header .description {
+    display: flex;
+    font-style: italic;
+    font-weight: 500;
+    font-size: .75rem;
+    line-height: 15px;
+    color: #4F4F4F;
+}
+
+header .drag {
+    margin-top: -.5rem;
+    margin-right: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #C4C4C4;
+}
+
+header .drag span:last-of-type {
+    margin-top: -1rem;
+}
+
+header p {
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+@media(min-width: 678px) {
+    header p {
+        width: 60%;
+        font-size: 14px
+    }
+}
+
+header img {
+    max-width: 100%;
+}
+
+/* End Header  */
+
+.ingredient-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+    padding-top: 3rem;
+}
+
+@media(min-width: 768px) {
+    .ingredient-content {
+        flex-direction: row-reverse
+    }
+}
+
+/* Start Serving */
+.serving {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 300px;
+    height: 300px;
+
+}
+
+@media(min-width: 768px) {
+    .serving {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        /* justify-content: center;
+        /* align-items: center; */
+    }
+}
+
+.serving .item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    align-items: center;
+    gap: .25rem;
+
+}
+
+@media(min-width: 768px) {
+    .serving .item {
+        flex-basis: 100%;
+        align-self: center;
+        margin-right: auto;
+        position: relative;
+    }
+}
+
+.serving .item:first-of-type {
+    flex-basis: 100%;
+}
+
+.serving .item .icon {
+    font-size: 1rem;
+}
+
+.serving .item:first-of-type .icon {
+    color: var(--orange);
+
+}
+
+
+.serving .item h3 {
+    font-weight: 700;
+    font-size: 8px;
+    line-height: 10px;
+    text-transform: uppercase;
+
+
+    color: #BDBDBD;
+}
+
+
+
+.serving .item p {
+
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: var(--gray4)
+}
+
+.serving .item:first-of-type p {
+    color: var(--orange);
+}
+
+@media(min-width: 768px) {
+    .serving .item h3 {
+        font-size: 10px;
+    }
+
+    .serving .item p {
+        font-size: 14px;
+    }
+}
+
+/* End Serving */
+.ingred-instruct {}
+
+/* start ingredients */
+.ingredients {
+    color: var(--gray1);
+    font-family: 'Playfair Display';
+
+}
+
+.ingredients h2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 2rem;
+
+}
+
+
+
+.ingredients .item h3 {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 2rem 0;
+}
+
+@media(min-width: 768px) {
+    .ingredients h2 {
+        font-size: 24px;
+    }
+
+    .ingredients .item h3 {
+        font-size: 18px;
+
+    }
+}
+
+.ingredients .item .step {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+    margin-bottom: 1rem;
+}
+
+.ingredients .item .step p {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 25px;
+}
+
+@media(min-width: 768px) {
+    .ingredients .item .step p {
+        font-size: 1rem;
+
+    }
+
+}
+
+.ingredients .item .step input[type="checkbox"] {
+    position: relative;
+    transform: translateY(37%) scale(2);
+    padding: 10px;
+}
+
+.ingredients .item .step span.important {
+    font-weight: bold;
+}
+
+/* End ingredients */
