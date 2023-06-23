@@ -13,10 +13,8 @@ body {
     padding: 2rem;
 
     @media(min-width: 768px) {
-        & {
-            padding: 1rem 8rem;
+        padding: 1rem 8rem;
 
-        }
     }
 }
 
@@ -27,10 +25,8 @@ header {
     padding: 1rem 0;
 
     @media(min-width: 768px) {
-        & {
-            padding: 2rem 4rem;
+        padding: 2rem 4rem;
 
-        }
     }
 
     .avatar {
@@ -38,38 +34,37 @@ header {
             color: $main-color;
             font-size: 0.875rem;
 
-        }
-
-        @media(min-width: 768px) {
-            h1 {
+            @media(min-width: 768px) {
                 font-size: 1.5rem;
             }
         }
+
+
 
         p {
             color: #A9A9A9;
             font-size: 0.625rem;
 
-        }
-
-        @media(min-width: 768px) {
-            h1 {
+            @media(min-width: 768px) {
                 font-size: .875rem;
             }
+
         }
+
+
 
         img {
             max-width: 100%;
             width: 101px;
             border-radius: 1rem;
-        }
 
-        @media(min-width: 768px) {
-            img {
+            @media(min-width: 768px) {
                 width: 156px;
 
             }
         }
+
+
     }
 
     .cards {
@@ -90,10 +85,8 @@ header {
             text-align: center;
 
             @media(min-width: 768px) {
-                & {
-                    width: 6.25rem;
+                width: 6.25rem;
 
-                }
             }
 
             .number {
@@ -140,7 +133,7 @@ footer {
     font-family: Montserrat;
     font-weight: 500;
 
-    bold {
+    b {
         font-weight: 700;
     }
 }
