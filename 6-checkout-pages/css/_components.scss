@@ -1,0 +1,54 @@
+.input-field {
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    label {
+        color: #4F4F4F;
+
+        font: {
+            size: 10px
+        }
+
+        @media(min-width: 768px) {
+            font-size: 12px;
+        }
+    }
+
+    .field {
+        color: #828282;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .icon {
+            position: absolute;
+            left: 10px;
+
+        }
+
+        input {
+            width: 100%;
+            padding: .75rem 1.25rem;
+            padding-left: 2.625rem;
+            font-size: 12px;
+            outline: none;
+            border: 1px solid #828282;
+            border-radius: .75rem;
+            font-weight: inherit;
+            color: #333;
+
+            @media(min-width: 768px) {
+                font-size: 1rem;
+            }
+
+            &::placeholder {
+                font-weight: 600;
+                color: #828282;
+
+            }
+        }
+    }
+
+
+
+}

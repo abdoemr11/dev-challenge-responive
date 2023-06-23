@@ -15,3 +15,6 @@
 ## 5 My gallery 
 - it's playing with grid and css selectors 
 - just curios to see another solutions
+
+## 6 Checkout Pages 
+- There is many reusable component in here. What is the best way to deal with it without the full power of frameworks?

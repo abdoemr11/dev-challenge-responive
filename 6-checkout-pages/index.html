@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <title>Checkout Page</title>
 </head>
@@ -51,22 +52,91 @@
             </div>
             <div class="summarize">
                 <p><span>Shipping</span> <span>$19</span></p>
-                <p><span>Total</span> <span>$148.98</span></p>
+                <p><span>Total</span> <span id="total-price">$148.98</span></p>
 
             </div>
         </div>
         <div class="customer">
             <div class="contact-info">
+                <h2>Contact information</h2>
                 <div class="input-field">
-                    <label for="mail">E-mail</label>
-                    <input type="email" name="mail" id="">
+                    <label for="email">E-mail</label>
+                    <br>
+                    <div class="field">
+                        <span class="material-icons icon">
+                            mail
+                        </span>
+                        <input type="email" name="email" id="email" placeholder="Enter Your email...">
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="phone">Phone</label>
+                    <br>
+                    <div class="field">
+                        <span class="material-icons icon">
+                            phone
+                        </span>
+                        <input type="tel" name="phone" id="phone">
+                    </div>
                 </div>
             </div>
-            <div class="address">
-
+            <div class="address-info">
+                <h2>Shipping address</h2>
+                <div class="input-field">
+                    <label for="fullname">Full name</label>
+                    <div class="field">
+                        <span class="material-icons icon">
+                            account_circle
+                        </span>
+                        <input type="text" name="fullname" id="fullname">
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="address">Address</label>
+                    <div class="field">
+                        <span class="material-icons icon">
+                            home
+                        </span>
+                        <input type="text" name="address" id="address" placeholder="Your address..">
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="city">City</label>
+                    <div class="field">
+                        <span class="material-icons icon">
+                            apartment
+                        </span>
+                        <input type="text" name="city" id="city" placeholder="Your city..">
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="country">Country</label>
+                    <div class="field">
+                        <span class="material-icons icon">
+                            apartment
+                        </span>
+                        <input type="text" name="country" id="country" placeholder="Your country..">
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="postal">Postal code</label>
+                    <div class="field">
+                        <span class="material-icons icon">
+                            markunread_mailbox
+                        </span>
+                        <input type="text" name="postal" id="postal" placeholder="Your postal code..">
+                    </div>
+                </div>
+                <div class="save-session">
+                    <input type="checkbox" name="save-session" id="save-session">
+                    <p>Save this information for next time</p>
+                </div>
+                <input type="submit" value="Continue">
             </div>
         </div>
+
     </form>
+    <script src="js/quantity.js"></script>
 </body>
 
 </html>
