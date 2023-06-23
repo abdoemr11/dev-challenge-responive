@@ -1,1 +1,64 @@
-$
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$main-color: #4E5150;
+
+$gray4: #BDBDBD;
+
+body {}
+
+header {
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 600;
+    padding: 1rem;
+
+    .avatar {
+        h1 {
+            color: $main-color;
+            font-size: 0.875rem;
+
+        }
+
+        p {
+            color: #A9A9A9;
+            font-size: 0.625rem;
+
+        }
+
+        img {
+            max-width: 100%;
+            width: 101px;
+            border-radius: 1rem;
+        }
+    }
+
+    .cards {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+
+        gap: 1rem;
+
+        .card {
+            font-size: .75rem;
+            padding: 1rem 0;
+            background-color: #E5E5E5;
+            border-radius: 1rem;
+            width: 4.875rem;
+            text-align: center;
+
+            .number {
+                color: $main-color;
+            }
+
+            .info {
+                color: $gray4;
+
+            }
+        }
+    }
+}
