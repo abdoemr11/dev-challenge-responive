@@ -10,3 +10,8 @@
   - web scrapping for the recipes from the source website
   - nextjs react application to consume and show these meals
   - also complete the ui/ux design of this website
+
+
+## 5 My gallery 
+- it's playing with grid and css selectors 
+- just curios to see another solutions

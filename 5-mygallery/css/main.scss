@@ -8,13 +8,30 @@ $main-color: #4E5150;
 
 $gray4: #BDBDBD;
 
-body {}
+
+body {
+    padding: 2rem;
+
+    @media(min-width: 768px) {
+        & {
+            padding: 1rem 8rem;
+
+        }
+    }
+}
 
 header {
     text-align: center;
     font-family: Montserrat;
     font-weight: 600;
-    padding: 1rem;
+    padding: 1rem 0;
+
+    @media(min-width: 768px) {
+        & {
+            padding: 2rem 4rem;
+
+        }
+    }
 
     .avatar {
         h1 {
@@ -23,10 +40,22 @@ header {
 
         }
 
+        @media(min-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
         p {
             color: #A9A9A9;
             font-size: 0.625rem;
 
+        }
+
+        @media(min-width: 768px) {
+            h1 {
+                font-size: .875rem;
+            }
         }
 
         img {
@@ -34,14 +63,23 @@ header {
             width: 101px;
             border-radius: 1rem;
         }
+
+        @media(min-width: 768px) {
+            img {
+                width: 156px;
+
+            }
+        }
     }
 
     .cards {
-        margin-top: 1rem;
+        margin-top: 2rem;
         display: flex;
         justify-content: center;
 
         gap: 1rem;
+
+
 
         .card {
             font-size: .75rem;
@@ -50,6 +88,13 @@ header {
             border-radius: 1rem;
             width: 4.875rem;
             text-align: center;
+
+            @media(min-width: 768px) {
+                & {
+                    width: 6.25rem;
+
+                }
+            }
 
             .number {
                 color: $main-color;
@@ -60,5 +105,42 @@ header {
 
             }
         }
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    img:nth-child(2) {
+
+        grid-column: 2 /span 2;
+    }
+
+    img:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    img:nth-child(4) {
+        grid-row: span 2;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #B9BDCF;
+    font-size: 0.875rem;
+    font-family: Montserrat;
+    font-weight: 500;
+
+    bold {
+        font-weight: 700;
     }
 }
