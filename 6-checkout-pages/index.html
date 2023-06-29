@@ -68,17 +68,21 @@
                         <span class="material-icons icon">
                             mail
                         </span>
-                        <input required type="email" name="email" id="email" placeholder="Enter Your email...">
+                        <input type="email" name="email" id="email" placeholder="Enter Your email..."
+                            oninvalid="this.setCustomValidity('Please Enter valid email')"
+                            oninput="setCustomValidity('')" required>
                     </div>
                 </div>
-                <div class="input-field">
+                <div class=" input-field">
                     <label for="phone">Phone</label>
                     <br>
                     <div class="field">
                         <span class="material-icons icon">
                             phone
                         </span>
-                        <input type="tel" name="phone" id="phone">
+                        <input type="tel" name="phone" id="phone" pattern="^\+\d{1,3} \(\d{3}\) \d{3}-\d{4}$"
+                            oninvalid=" this.setCustomValidity('Please Enter valid +X (XXX) XXX-XXXX Phone')"
+                            oninput="setCustomValidity('')" required>
                     </div>
                 </div>
             </div>
@@ -90,7 +94,9 @@
                         <span class="material-icons icon">
                             account_circle
                         </span>
-                        <input type="text" name="fullname" id="fullname">
+                        <input type="text" name="fullname" id="fullname"
+                            oninvalid="this.setCustomValidity('Please Enter Your Full Name')"
+                            oninput="setCustomValidity('')" required>
                     </div>
                 </div>
                 <div class="input-field">
@@ -99,7 +105,9 @@
                         <span class="material-icons icon">
                             home
                         </span>
-                        <input type="text" name="address" id="address" placeholder="Your address..">
+                        <input type="text" name="address" id="address" placeholder="Your address.."
+                            oninvalid="this.setCustomValidity('Please Enter Your Address')"
+                            oninput="setCustomValidity('')" required>
                     </div>
                 </div>
                 <div class="input-field">
@@ -108,7 +116,9 @@
                         <span class="material-icons icon">
                             apartment
                         </span>
-                        <input type="text" name="city" id="city" placeholder="Your city..">
+                        <input type="text" name="city" id="city" placeholder="Your city.."
+                            oninvalid="this.setCustomValidity('Please Enter Your City')" oninput="setCustomValidity('')"
+                            required>
                     </div>
                 </div>
                 <div class="country-post">
@@ -118,7 +128,9 @@
                             <span class="material-icons icon">
                                 apartment
                             </span>
-                            <select type="text" name="country" id="country">
+                            <select type="text" name="country" id="country"
+                                oninvalid="this.setCustomValidity('Please Choose your country')"
+                                oninput="setCustomValidity('')" required>
                                 <option value="" hidden disabled selected>Your country..</option>
                             </select>
                         </div>
@@ -129,7 +141,9 @@
                             <span class="material-icons icon">
                                 markunread_mailbox
                             </span>
-                            <input type="text" name="postal" id="postal" placeholder="Your postal code..">
+                            <input type="text" name="postal" id="postal" placeholder="Your postal code.."
+                                oninvalid="this.setCustomValidity('Please Enter valid postal Code')"
+                                oninput="setCustomValidity('')" required>
                         </div>
                     </div>
                 </div>
@@ -143,6 +157,7 @@
 
     </form>
     <script src="js/quantity.js"></script>
+    <script src="js/form.js"></script>
 </body>
 
 </html>

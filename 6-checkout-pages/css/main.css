@@ -286,4 +286,11 @@ form {
   margin-left: auto;
   font-size: 1rem;
   font-weight: 600;
+}
+
+#phone:invalid:invalid-message {
+  color: white;
+  background-color: red;
+  padding: 5px;
+  border-radius: 5px;
 }/*# sourceMappingURL=main.css.map */

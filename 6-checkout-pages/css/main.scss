@@ -262,3 +262,10 @@ form {
 
 
 }
+
+#phone:invalid:invalid-message {
+    color: white;
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+}
