@@ -18,3 +18,6 @@
 
 ## 6 Checkout Pages 
 - There is many reusable component in here. What is the best way to deal with it without the full power of frameworks?
+- I used reefjs which provide simple utility function for creating and managing ui state elements. However I can't get onclick event to work properly
+- the dropdown menu is tough work either in styling or getting and getting the current selected value.
+- When I'm doing form validation I really appreciate what something like formik to offer to me. 

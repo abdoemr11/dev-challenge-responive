@@ -48,6 +48,9 @@
 .input-field .field select {
   color: #828282;
 }
+.input-field .field select::-ms-expand {
+  display: none;
+}
 .input-field .field select option {
   width: 100%;
   min-height: 60px;
@@ -82,11 +85,6 @@ body {
 @media (min-width: 768px) {
   body {
     padding: 2rem 4rem;
-  }
-}
-@media (min-width: 991px) {
-  body {
-    padding: 4rem 8rem;
   }
 }
 

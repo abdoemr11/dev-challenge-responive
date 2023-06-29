@@ -2,6 +2,7 @@ let { store, component } = reef;
 // Create a reactive data store
 let data = store({
     countries: ['USA', 'Canada', 'UK', 'Germany', 'France', 'Australia'],
+    selectedCountry: '',
     products: [
         {
             name: "Vintage Backpack",
@@ -66,7 +67,7 @@ component('.products', CardTemplate)
 //Create the countries
 function countriesTemplate() {
     let countriesHtml = `
-    <option value="" hidden disabled selected>Your country..</option>
+    <option onclick="lol()" value="" hidden disabled selected>Your country..</option>
 
     `
     countriesHtml += data.countries.map(country => `
@@ -77,3 +78,9 @@ function countriesTemplate() {
 }
 
 component('#country', countriesTemplate)
+const selectElement = document.getElementById('country');
+// Attach event listener to handle country selection
+selectElement.addEventListener('change', (event) => {
+    const selectedOptions = Array.from(event.target.selectedOptions).map(option => option.value);
+    data.selectedCountry = selectedOptions;
+});
