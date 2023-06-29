@@ -11,11 +11,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/reef.js"></script>
     <title>Checkout Page</title>
 </head>
 
 <body>
     <h1>Checkout</h1>
+    <div id="app"></div>
     <form action="">
         <div class="products">
             <div class="card">
@@ -109,22 +111,26 @@
                         <input type="text" name="city" id="city" placeholder="Your city..">
                     </div>
                 </div>
-                <div class="input-field">
-                    <label for="country">Country</label>
-                    <div class="field">
-                        <span class="material-icons icon">
-                            apartment
-                        </span>
-                        <input type="text" name="country" id="country" placeholder="Your country..">
+                <div class="country-post">
+                    <div class="input-field">
+                        <label for="country">Country</label>
+                        <div class="field">
+                            <span class="material-icons icon">
+                                apartment
+                            </span>
+                            <select type="text" name="country" id="country">
+                                <option value="" hidden disabled selected>Your country..</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="input-field">
-                    <label for="postal">Postal code</label>
-                    <div class="field">
-                        <span class="material-icons icon">
-                            markunread_mailbox
-                        </span>
-                        <input type="text" name="postal" id="postal" placeholder="Your postal code..">
+                    <div class="input-field">
+                        <label for="postal">Postal code</label>
+                        <div class="field">
+                            <span class="material-icons icon">
+                                markunread_mailbox
+                            </span>
+                            <input type="text" name="postal" id="postal" placeholder="Your postal code..">
+                        </div>
                     </div>
                 </div>
                 <div class="save-session">

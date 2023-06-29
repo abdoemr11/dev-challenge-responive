@@ -26,7 +26,7 @@
 
         }
 
-        input {
+        %input-template {
             width: 100%;
             padding: .75rem 1.25rem;
             padding-left: 2.625rem;
@@ -40,11 +40,44 @@
             @media(min-width: 768px) {
                 font-size: 1rem;
             }
+        }
+
+        input {
+            @extend %input-template;
 
             &::placeholder {
                 font-weight: 600;
                 color: #828282;
 
+            }
+        }
+
+        select {
+            @extend %input-template;
+            color: #828282;
+
+            option {
+                width: 100%;
+                min-height: 60px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 15px;
+                transition: all 300ms;
+
+                &.opened {
+                    overflow-y: scroll;
+                }
+
+                &:first-of-type {
+                    font-weight: 600;
+                    color: #828282;
+                }
+            }
+
+            option:first-of-type {
+                font-weight: 600;
+                color: #828282;
             }
         }
     }

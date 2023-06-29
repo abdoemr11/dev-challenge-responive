@@ -21,7 +21,7 @@
   position: absolute;
   left: 10px;
 }
-.input-field .field input {
+.input-field .field select, .input-field .field input {
   width: 100%;
   padding: 0.75rem 1.25rem;
   padding-left: 2.625rem;
@@ -33,7 +33,7 @@
   color: #333;
 }
 @media (min-width: 768px) {
-  .input-field .field input {
+  .input-field .field select, .input-field .field input {
     font-size: 1rem;
   }
 }
@@ -42,6 +42,29 @@
   color: #828282;
 }
 .input-field .field input::placeholder {
+  font-weight: 600;
+  color: #828282;
+}
+.input-field .field select {
+  color: #828282;
+}
+.input-field .field select option {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  transition: all 300ms;
+}
+.input-field .field select option.opened {
+  overflow-y: scroll;
+}
+.input-field .field select option:first-of-type {
+  font-weight: 600;
+  color: #828282;
+}
+.input-field .field select option:first-of-type {
   font-weight: 600;
   color: #828282;
 }
@@ -54,9 +77,14 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
 }
 @media (min-width: 768px) {
+  body {
+    padding: 2rem 4rem;
+  }
+}
+@media (min-width: 991px) {
   body {
     padding: 4rem 8rem;
   }
@@ -77,13 +105,14 @@ h1 {
 
 .products {
   background-color: #F2F2F2;
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: 2rem;
-  flex-basis: 35%;
+  flex-basis: 300px;
 }
 .products .card {
   display: flex;
   margin-bottom: 2rem;
+  justify-content: space-between;
 }
 .products .card img {
   width: 122.75px;
@@ -101,6 +130,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-basis: 250px;
 }
 .products .card .info h3 {
   font-size: 0.75rem;
@@ -135,13 +165,14 @@ h1 {
   border: 1px solid #828282;
   border-radius: 0.75rem;
 }
-.products .card .info .quantity p:not(:nth-child(2)) {
+.products .card .info .quantity .modifier {
   color: #828282;
-  background-color: #F2994A;
+  background-color: #E0E0E0;
   padding: 1px;
   font-size: 1.5rem;
+  border-radius: 4px;
 }
-.products .card .info .quantity p:not(:nth-child(2)):hover {
+.products .card .info .quantity .modifier:hover {
   cursor: pointer;
 }
 .products .summarize {
@@ -172,6 +203,7 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 @media (min-width: 768px) {
   form {
@@ -183,8 +215,12 @@ form {
 }
 
 .customer {
-  order: -1;
-  flex-basis: 55%;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .customer {
+    order: -1;
+  }
 }
 .customer h2 {
   font-size: 14px;
@@ -210,4 +246,46 @@ form {
 }
 .customer .address-info .input-field:last-of-type {
   flex-basis: 40%;
+}
+.customer .country-post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.customer .save-session {
+  display: flex;
+  color: #4F4F4F;
+  font-size: 0.625rem;
+  font-weight: 600;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .customer .save-session {
+    font-size: 0.75rem;
+  }
+}
+.customer .save-session input[type=checkbox] {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+@media (min-width: 768px) {
+  .customer .save-session input[type=checkbox] {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+  }
+}
+.customer input[type=submit] {
+  align-self: end;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #F2994A;
+  color: white;
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: 600;
 }/*# sourceMappingURL=main.css.map */

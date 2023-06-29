@@ -8,11 +8,18 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
+
 
     @media(min-width: 768px) {
+        padding: 2rem 4rem;
+    }
+
+    @media(min-width: 991px) {
         padding: 4rem 8rem;
     }
+
+
 }
 
 h1 {
@@ -30,13 +37,14 @@ h1 {
 
 .products {
     background-color: #F2F2F2;
-    padding: 2rem;
+    padding: 1rem;
     margin-bottom: 2rem;
-    flex-basis: 35%;
+    flex-basis: 300px;
 
     .card {
         display: flex;
         margin-bottom: 2rem;
+        justify-content: space-between;
 
         img {
             width: 122.75px;
@@ -51,12 +59,13 @@ h1 {
         }
 
         .info {
+
             color: #4E5150;
             font-weight: 600;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-
+            flex-basis: 250px;
 
 
             h3 {
@@ -96,12 +105,12 @@ h1 {
                 border: 1px solid #828282;
                 border-radius: .75rem;
 
-                p:not(:nth-child(2)) {
+                .modifier {
                     color: #828282;
-                    background-color: #F2994A;
-
+                    background-color: #E0E0E0;
                     padding: 1px;
                     font-size: 1.5rem;
+                    border-radius: 4px;
 
                     &:hover {
                         cursor: pointer
@@ -152,6 +161,7 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 
     @media (min-width:768px) {
         flex-direction: row;
@@ -163,10 +173,12 @@ form {
 }
 
 .customer {
+    // order: 2;
+    flex: 1;
 
-    order: -1;
-
-    flex-basis: 55%;
+    @media (min-width:768px) {
+        order: -1
+    }
 
     h2 {
         font-size: 14px;
@@ -195,6 +207,58 @@ form {
         // .input-field:nth-last-of-type() 
         .input-field:last-of-type {
             flex-basis: 40%;
+        }
+    }
+
+    .country-post {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem
+    }
+
+    .save-session {
+        display: flex;
+        color: #4F4F4F;
+        font-size: 0.625rem;
+        font-weight: 600;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        @media (min-width: 768px) {
+            font-size: 0.75rem;
+
+        }
+
+        input[type="checkbox"] {
+            display: block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: .5rem;
+
+            @media (min-width: 768px) {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 1rem;
+
+            }
+        }
+
+
+    }
+
+    input[type="submit"] {
+        align-self: end;
+        padding: 1rem 2.5rem;
+        border-radius: 1rem;
+        border: none;
+        background-color: #F2994A;
+
+        color: white;
+        margin-left: auto;
+
+        font: {
+            size: 1rem;
+            weight: 600;
         }
     }
 
