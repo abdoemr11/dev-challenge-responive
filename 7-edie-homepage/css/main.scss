@@ -1,0 +1,369 @@
+@use './variables' as *;
+
+@use './components' as *;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 1rem
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    z-index: 2;
+
+    h1 {
+        color: $text-primary;
+        font-size: 1.5rem;
+        font-family: Heebo;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+
+        @media ($from-small) {
+            font-size: 2.25rem;
+
+        }
+    }
+
+    nav {
+        .menu {
+            font-size: 2.5rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            @media ($from-small) {
+                display: none;
+            }
+        }
+
+        .sm-menu-hidden {
+            top: -300px;
+            opacity: 0;
+        }
+
+        .sm-menu-shown {
+            top: 100%;
+            opacity: 1;
+        }
+
+        ul {
+            background-color: #F2F2F2;
+            position: absolute;
+            width: 100%;
+            padding: 1rem;
+            left: 0;
+            transition: 400ms;
+            display: flex;
+            flex-direction: column;
+            @extend .sm-menu-hidden;
+
+            @media($from-small) {
+                position: static;
+                opacity: 1;
+                flex-direction: row;
+                opacity: 1;
+                background: none;
+            }
+
+            li {
+                list-style: none;
+                margin-bottom: 1rem;
+
+                @media($from-small) {
+                    padding: .5rem 1rem;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $text-primary;
+                    text-transform: capitalize;
+                    font-size: .75rem;
+
+                    @media ($from-small) {
+                        font-size: 1.5rem;
+
+                    }
+
+                    &:active {}
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    margin: 2rem 0;
+
+    &>div {
+        max-width: 360px;
+        margin: 0 auto;
+
+        &:last-of-type {
+
+            @media ($from-small) {
+                max-width: 360px;
+            }
+
+        }
+
+        @media ($from-small) {
+            max-width: 550px;
+            margin-left: 20%;
+
+
+        }
+    }
+
+    div:first-child> :first-child {
+        color: $main-blue;
+        font-size: .75rem;
+
+        @media ($from-small) {
+            font-size: 1.125rem;
+
+        }
+    }
+
+    p:last-of-type {
+        color: $text-secondary;
+        font-size: 0.75rem;
+        font-weight: 400;
+
+        @media ($from-small) {
+            font-size: 1.125rem;
+
+        }
+    }
+
+
+
+    img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+        clip-path: inset(0 0 40px 0 round 10px);
+        height: 300px;
+    }
+
+    .contact {
+        margin-top: 3rem;
+
+        h3 {
+            color: $gray-3;
+            font-size: 0.875rem;
+            font-family: Poppins;
+            font-weight: 500;
+            margin-bottom: .75rem;
+
+            @media ($from-small) {
+                font-size: 0.875rem
+            }
+        }
+
+        form {
+            display: flex;
+
+            input {
+                border-radius: 10px;
+                border: none;
+                outline: none;
+            }
+
+            input[type="text"] {
+                padding: 1rem .5rem;
+                background-color: #F2F2F2;
+                flex: 1;
+                color: $text-primary;
+                font-size: 0.875rem;
+
+                @media ($from-small) {
+                    font-size: 1.125rem;
+                }
+
+                &::placeholder {
+                    color: var(--gray-4, #BDBDBD);
+                    font-size: 0.875rem;
+                    font-weight: 500;
+
+                    @media ($from-small) {
+                        font-size: 1.125rem;
+                    }
+
+
+                }
+            }
+
+            input[type="submit"] {
+                margin: .25rem 0;
+                padding: 0 1rem;
+                margin-left: -4rem;
+                background-color: $main-blue;
+                color: #F2F2F2;
+            }
+        }
+    }
+}
+
+.services {
+    margin-top: 4rem;
+
+    h2 {
+        @media ($from-small) {
+            font-size: 2.25rem
+        }
+    }
+
+    .serv-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+
+        @media ($from-small) {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2rem;
+
+        }
+
+        @media (min-width: 991px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .serv {
+            padding: 2rem 1rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            gap: 2rem;
+
+            .icon {
+                padding: 1rem;
+                background-color: $main-blue;
+                color: white;
+                border-radius: 1rem;
+            }
+
+            &:nth-of-type(2) .icon {
+                background-color: $main-green;
+
+            }
+
+            &:nth-of-type(3) .icon {
+                background-color: $main-red;
+
+            }
+
+            .main-btn:not(:hover) {
+                background-color: #e0e0e0;
+                color: $text-secondary;
+            }
+        }
+
+        .serv:hover {
+            box-shadow: 0px 0px 4px -1px
+        }
+    }
+}
+
+.our-works {
+    margin-top: 4rem;
+    position: relative;
+
+    @media ($from-small) {
+        padding: 2rem 4rem;
+    }
+
+
+
+    h2 {
+        margin-bottom: 2rem;
+
+        margin-left: 2rem;
+
+        @media ($from-small) {
+            font-size: 2.25rem
+        }
+    }
+
+    .image-container {
+        display: grid;
+        row-gap: 2rem;
+        justify-content: center;
+
+        @media ($from-small) {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 1rem;
+        }
+
+        .card {
+            img {
+                max-width: 100%;
+                border-radius: 1rem;
+            }
+
+            &:nth-child(2n -1) {
+                margin-top: 25%;
+            }
+
+            p {
+
+                color: var(--gray-3, #828282);
+                font-size: 0.75rem;
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+
+                @media($from-small) {
+                    font-size: 0.875rem;
+
+                }
+            }
+
+            h3 {
+                color: $text-primary;
+                font-size: 1.125rem;
+
+                @media($from-small) {
+                    font-size: 1.5rem;
+
+                }
+            }
+
+
+        }
+    }
+
+    a {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: $main-blue;
+        font-size: 1.125rem;
+
+        gap: .5rem;
+
+        @media ($from-small) {
+            font-size: 1.5rem;
+            position: absolute;
+            bottom: 2rem;
+            right: 4rem;
+        }
+    }
+}
