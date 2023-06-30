@@ -21,4 +21,9 @@
 - I used reefjs which provide simple utility function for creating and managing ui state elements. However I can't get onclick event to work properly
 - the dropdown menu is tough work either in styling or getting and getting the current selected value.
 - When I'm doing form validation I really appreciate what something like formik to offer to me. 
-- I used simple html5 validation with customization but I couldn't customize the style for this message
+- I used simple html5 validation with customization but I couldn't customize the style for this message.
+
+
+## 7 Edie homepage
+- I saw a wise reason for not putting margin or padding on main body.
+- In the ourteam section when using grid I was getting all image with same width which wasn't in the design. The solution is simple don't set max-width to 100% leave it to default. It result in horizontal mobil scroll so the problem isn't solved till now.

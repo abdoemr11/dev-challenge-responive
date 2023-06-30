@@ -11,10 +11,24 @@
 .container {
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1rem;
 
     // padding: 0 4rem;
     @media ($from-small) {
         padding: 0 4rem;
+
+    }
+}
+
+.landing-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: .875rem .625rem;
+
+
+    // padding: 0 4rem;
+    @media ($from-small) {
+        padding: 2.625rem 3.25rem;
 
     }
 }
@@ -24,7 +38,6 @@ body {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin: 1rem
 }
 
 
@@ -166,67 +179,17 @@ header {
     img {
         max-width: 100%;
         margin-bottom: 1rem;
-        clip-path: inset(0 0 40px 0 round 10px);
-        height: 300px;
-    }
+        clip-path: inset(0 0 50px 0 round 10px);
+        margin-bottom: -50px;
 
-    .contact {
-        margin-top: 3rem;
-
-        h3 {
-            color: $gray-3;
-            font-size: 0.875rem;
-            font-family: Poppins;
-            font-weight: 500;
-            margin-bottom: .75rem;
-
-            @media ($from-small) {
-                font-size: 0.875rem
-            }
-        }
-
-        form {
-            display: flex;
-
-            input {
-                border-radius: 10px;
-                border: none;
-                outline: none;
-            }
-
-            input[type="text"] {
-                padding: 1rem .5rem;
-                background-color: #F2F2F2;
-                flex: 1;
-                color: $text-primary;
-                font-size: 0.875rem;
-
-                @media ($from-small) {
-                    font-size: 1.125rem;
-                }
-
-                &::placeholder {
-                    color: var(--gray-4, #BDBDBD);
-                    font-size: 0.875rem;
-                    font-weight: 500;
-
-                    @media ($from-small) {
-                        font-size: 1.125rem;
-                    }
-
-
-                }
-            }
-
-            input[type="submit"] {
-                margin: .25rem 0;
-                padding: 0 1rem;
-                margin-left: -4rem;
-                background-color: $main-blue;
-                color: #F2F2F2;
-            }
+        @media($from-small) {
+            clip-path: inset(250px 0 250px 0 round 10px);
+            margin-bottom: -250px;
+            margin-top: -250px;
         }
     }
+
+
 }
 
 .services {
@@ -413,13 +376,14 @@ header {
     .image-container {
         display: grid;
         grid-template-columns: repeat(2, fit-content(100%));
-        column-gap: .5rem;
+        gap: .5rem;
+        // grid-template-columns: auto auto;
 
         img {
-            max-width: 100%;
-            height: auto;
             border-radius: 1.5rem;
+            max-width: 100%;
             object-fit: contain;
+
 
             &:first-of-type {
                 grid-row: span 2;
@@ -468,4 +432,77 @@ header {
             font-size: 1.125rem;
         }
     }
+}
+
+footer {
+    background-color: #100E1D;
+    margin-top: 4rem;
+    padding: 2rem;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        row-gap: 4rem;
+
+        @media ($from-small) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    ul {
+        li {
+            list-style: none;
+
+            a {
+                color: white;
+                text-decoration: none;
+                text-transform: capitalize;
+                color: #FFF;
+                font-size: 1.125rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 200%;
+            }
+        }
+    }
+
+    .brand {
+        color: var(--gray-6, #F2F2F2);
+
+        h1 {
+            font-size: 2.25rem;
+            font-family: Heebo;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+            margin-bottom: 1rem;
+        }
+
+        .social {
+            img {
+                margin-right: .75rem;
+            }
+        }
+    }
+
+    .contact {
+        @media($from-small) {
+            flex-basis: 22.5rem;
+        }
+    }
+
+    &>p:last-of-type {
+        margin-top: 6rem;
+        color: #F2F2F2;
+        text-align: center;
+        font-size: 0.75rem;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
 }

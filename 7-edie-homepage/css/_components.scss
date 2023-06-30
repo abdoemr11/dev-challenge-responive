@@ -23,3 +23,61 @@ h2 {
         cursor: pointer;
     }
 }
+
+.contact {
+    margin-top: 3rem;
+
+    h3 {
+        color: $gray-3;
+        font-size: 0.875rem;
+        font-family: Poppins;
+        font-weight: 500;
+        margin-bottom: .75rem;
+
+        @media ($from-small) {
+            font-size: 0.875rem
+        }
+    }
+
+    form {
+        display: flex;
+
+        input {
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+
+        input[type="text"] {
+            padding: 1rem .5rem;
+            background-color: #F2F2F2;
+            flex: 1;
+            color: $text-primary;
+            font-size: 0.875rem;
+
+            @media ($from-small) {
+                font-size: 1.125rem;
+            }
+
+            &::placeholder {
+                color: var(--gray-4, #BDBDBD);
+                font-size: 0.875rem;
+                font-weight: 500;
+
+                @media ($from-small) {
+                    font-size: 1.125rem;
+                }
+
+
+            }
+        }
+
+        input[type="submit"] {
+            margin: .25rem 0;
+            padding: 0 1rem;
+            margin-left: -4rem;
+            background-color: $main-blue;
+            color: #F2F2F2;
+        }
+    }
+}
