@@ -74,10 +74,14 @@ h2 {
 
         input[type="submit"] {
             margin: .25rem 0;
-            padding: 0 1rem;
-            margin-left: -4rem;
+            padding: 0 1.25rem;
+            margin-left: -4.25rem;
             background-color: $main-blue;
             color: #F2F2F2;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

@@ -27,3 +27,4 @@
 ## 7 Edie homepage
 - I saw a wise reason for not putting margin or padding on main body.
 - In the ourteam section when using grid I was getting all image with same width which wasn't in the design. The solution is simple don't set max-width to 100% leave it to default. It result in horizontal mobil scroll so the problem isn't solved till now.
+- The solution to this dilemma is to use javascript. With matchMedia and naturalWidth It can achive the trick easiy. 

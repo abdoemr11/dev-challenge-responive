@@ -40,6 +40,11 @@ body {
     line-height: normal;
 }
 
+*,
+html {
+
+    scroll-behavior: smooth !important;
+}
 
 header {
     display: flex;
@@ -123,7 +128,6 @@ header {
 
                     }
 
-                    &:active {}
                 }
             }
         }
@@ -347,10 +351,23 @@ header {
 
     display: flex;
     flex-direction: column;
+    row-gap: 2rem;
 
     @media ($from-small) {
         flex-direction: row;
-        column-gap: 6rem;
+        column-gap: 2rem;
+    }
+
+    @media(min-width: 1200px) {
+        column-gap: 4rem;
+
+    }
+
+    .info {
+        @media ($from-small) {
+            // flex-basis: 300px;
+
+        }
     }
 
     h3 {
@@ -379,9 +396,16 @@ header {
         gap: .5rem;
         // grid-template-columns: auto auto;
 
-        img {
-            border-radius: 1.5rem;
-            max-width: 100%;
+        figure {
+            width: fit-content;
+            height: fit-content;
+
+            img {
+                border-radius: 1.5rem;
+                margin-right: -50%;
+
+            }
+
             object-fit: contain;
 
 
