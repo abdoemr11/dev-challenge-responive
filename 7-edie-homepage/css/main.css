@@ -99,6 +99,11 @@ h2 {
 }
 @media ((min-width: 768px)) {
   .container {
+    padding: 0 2rem;
+  }
+}
+@media (min-width: 991px) {
+  .container {
     padding: 0 4rem;
   }
 }
