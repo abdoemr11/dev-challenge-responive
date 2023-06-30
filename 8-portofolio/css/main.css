@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #F2F2F2;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.person-info {
+  padding: 1rem;
+  background-color: white;
+  display: grid;
+  row-gap: 1rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  color: #828282;
+  font-size: 1.125rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+@media (min-width: 768px) {
+  .person-info {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+}
+.person-info img {
+  max-width: 100%;
+  width: 250px;
+}
+@media (min-width: 768px) {
+  .person-info img {
+    width: 100%;
+    grid-row: span 2;
+  }
+}
+.person-info .title h2 {
+  color: #4F4F4F;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.person-info .contact {
+  color: #4F4F4F;
+}
+@media (min-width: 768px) {
+  .person-info .contact {
+    grid-column: 4;
+  }
+}
+@media (min-width: 768px) {
+  .person-info .description {
+    grid-column: span 3;
+  }
+}
+.person-info .description p {
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=main.css.map */

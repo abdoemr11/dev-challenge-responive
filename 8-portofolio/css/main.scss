@@ -1,0 +1,71 @@
+ @use './variables' as *;
+
+ * {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+ }
+
+ body {
+     background-color: #F2F2F2;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 500;
+
+ }
+
+ .person-info {
+     padding: 1rem;
+     background-color: white;
+     display: grid;
+     row-gap: 1rem;
+     column-gap: 2rem;
+     color: $text-secondary;
+     font-size: 1.125rem;
+     grid-template-columns: 1fr;
+     grid-template-rows: auto;
+
+     @media(min-width: 768px) {
+         grid-template-columns: repeat(4, 1fr);
+         grid-template-rows: 1fr 1fr
+     }
+
+     img {
+         max-width: 100%;
+         width: 250px;
+
+         @media(min-width: 768px) {
+             width: 100%;
+             grid-row: span 2;
+
+         }
+     }
+
+     .title {
+         h2 {
+             color: $text-primary;
+             font-size: 1.5rem;
+             font-weight: 600;
+         }
+
+     }
+
+     .contact {
+         color: $text-primary;
+
+         @media(min-width: 768px) {
+             grid-column: 4;
+         }
+     }
+
+     .description {
+         @media(min-width: 768px) {
+             grid-column: span 3;
+
+
+         }
+
+         p {
+             margin-bottom: 2rem;
+         }
+     }
+ }
