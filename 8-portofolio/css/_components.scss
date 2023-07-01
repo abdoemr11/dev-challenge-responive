@@ -9,11 +9,43 @@
     margin-left: auto;
 }
 
-// Usage
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
 .custom-container {
-    @include make-container();
+    @include make-container(1.5rem);
 }
 
+
+
 .container {
-    @media(min-width: 480px) {}
+
+    @each $breakpoint,
+    $container-max-width in $grid-breakpoints {
+        $min: map-get($map: $container-max-widths, $key: $breakpoint);
+
+        @if $min {
+            @media(min-width: $container-max-width) {
+                @include make-container(1.5rem);
+                width: $min;
+
+            }
+
+        }
+
+    }
+
 }

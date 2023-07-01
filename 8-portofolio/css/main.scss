@@ -1,9 +1,17 @@
  @use './variables' as *;
+ @use './components' as *;
+
 
  * {
      box-sizing: border-box;
      padding: 0;
      margin: 0;
+ }
+
+ %section-general {
+     padding: 1rem;
+     background-color: $card-background;
+     border-radius: .75rem
  }
 
  body {
@@ -13,9 +21,24 @@
 
  }
 
+ .container {
+     display: grid;
+     gap: 2rem;
+
+     @media($to-mid-grid) {
+         grid-template-columns: repeat(2, 1fr);
+
+     }
+
+     @media($to-full-grid) {
+         grid-template-columns: repeat(3, 1fr);
+
+     }
+ }
+
  .person-info {
-     padding: 1rem;
-     background-color: white;
+     @extend %section-general;
+     background-color: $card-background;
      display: grid;
      row-gap: 1rem;
      column-gap: 2rem;
@@ -24,16 +47,22 @@
      grid-template-columns: 1fr;
      grid-template-rows: auto;
 
-     @media(min-width: 768px) {
+     @media($to-mid-grid) {
+         grid-column: span 2;
+
          grid-template-columns: repeat(4, 1fr);
          grid-template-rows: 1fr 1fr
+     }
+
+     @media($to-full-grid) {
+         grid-column: span 3;
      }
 
      img {
          max-width: 100%;
          width: 250px;
 
-         @media(min-width: 768px) {
+         @media($to-mid-grid) {
              width: 100%;
              grid-row: span 2;
 
@@ -66,6 +95,226 @@
 
          p {
              margin-bottom: 2rem;
+         }
+     }
+ }
+
+ .front-end {
+
+     background-color: $card-background;
+     @extend %section-general;
+
+     @media($to-mid-grid) {
+         grid-column: span 2;
+     }
+
+     @media($to-full-grid) {
+         grid-column: span 1;
+     }
+
+     .stat-container {
+         display: grid;
+         row-gap: 1rem;
+         column-gap: 2rem;
+
+         @media(min-width: 768px) {
+             grid-template-columns: 1fr 1fr;
+         }
+     }
+
+     h2 {
+         color: $text-primary;
+         font-size: 1.125rem;
+         font-weight: 700;
+         text-transform: uppercase;
+         margin-bottom: 1rem;
+     }
+
+     .stat {
+         display: flex;
+         gap: 1rem;
+         justify-content: space-between;
+         flex-direction: column;
+
+         @media(min-width: 768px) {
+             flex-direction: row;
+
+         }
+
+         h3 {
+             color: $text-primary;
+             font-size: 1rem;
+             font-family: Montserrat;
+             font-weight: 500;
+         }
+     }
+
+     .bar {
+         border-radius: 0.75rem;
+         background-color: #C4C4C4;
+         //   flex-basis: 350px;
+         width: 100%;
+         height: 10px;
+
+         @media(min-width: 768px) {
+             width: calc(100% - 96px);
+
+         }
+
+         .fore-bar {
+             border-radius: 0.75rem;
+             background-color: #2F80ED;
+             height: 100%;
+         }
+     }
+ }
+
+ .hobbies {
+     @extend %section-general;
+
+     @media(min-width: 768px) {
+         grid-row: 3;
+     }
+
+     h2 {
+         color: $text-primary;
+         font-size: 1.5rem;
+         font-weight: 500;
+         margin-bottom: 1rem;
+     }
+
+     .hobby {
+
+         margin-bottom: 2rem;
+
+         img {
+             max-width: 100%;
+         }
+
+         h3 {
+             color: #333;
+             font-size: 1.125rem;
+             font-weight: 600;
+             line-height: normal;
+         }
+
+         p {
+             color: $text-secondary;
+             font-size: 1rem;
+             font-weight: 500;
+
+         }
+     }
+ }
+
+ .blog {
+     @extend %section-general;
+     overflow: hidden;
+
+     @media(min-width: 768px) {
+         grid-column: span 2;
+     }
+
+     h3 {
+         color: #E0E0E0;
+         font-size: 1rem;
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: 500;
+         line-height: normal;
+
+         &:last-of-type {
+             color: #2F80ED;
+
+         }
+
+     }
+
+     .heading {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         margin-bottom: 1rem;
+
+         @media (min-width: 768px) {
+             flex-direction: row;
+
+         }
+
+         h2 {
+             color: #333;
+             font-size: 1.5rem;
+             font-family: Montserrat;
+             font-style: normal;
+             font-weight: 500;
+             line-height: normal;
+             margin-bottom: 1rem;
+
+             @media(min-width: 768px) {
+                 padding-top: 2rem;
+             }
+         }
+
+         img {
+             max-width: 100%;
+             position: relative;
+
+             @media (min-width: 768px) {
+                 right: -2rem;
+
+             }
+
+             ;
+         }
+     }
+
+     p {
+         margin-bottom: 2rem;
+
+     }
+ }
+
+ .experience {
+     @extend %section-general;
+
+     @media($to-mid-grid) {
+         grid-row: 3;
+     }
+
+     @media($to-full-grid) {
+         grid-column: span 2;
+         ;
+     }
+
+     h2 {
+         color: $text-primary;
+         font-size: 1.5rem;
+         font-weight: 500;
+         margin-bottom: 2rem;
+     }
+
+     .exp {
+         display: flex;
+         flex-wrap: wrap;
+         row-gap: 1rem;
+         margin-bottom: 1.5rem;
+         justify-content: space-between;
+
+         p {
+             color: $text-secondary;
+             font-size: 0.875rem;
+             font-weight: 500;
+         }
+
+         h3 {
+             color: #333;
+             font-size: 1rem;
+             font-family: Montserrat;
+             font-style: normal;
+             font-weight: 600;
+             line-height: normal;
+             padding: 1rem 0;
+             margin-bottom: 1rem;
          }
      }
  }
