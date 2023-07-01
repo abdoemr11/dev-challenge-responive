@@ -15,7 +15,7 @@ body {
 
 @media(min-width: 768px) {
     body {
-        max-width: 720px;
+        max-width: 750px;
     }
 }
 
