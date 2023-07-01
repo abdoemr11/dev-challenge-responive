@@ -7,7 +7,7 @@
 }
 
 @media (min-width: 576px) {
-  .container {
+  .container, .project {
     width: 100%;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -17,7 +17,7 @@
   }
 }
 @media (min-width: 768px) {
-  .container {
+  .container, .project {
     width: 100%;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -27,7 +27,7 @@
   }
 }
 @media (min-width: 992px) {
-  .container {
+  .container, .project {
     width: 100%;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -37,7 +37,7 @@
   }
 }
 @media (min-width: 1200px) {
-  .container {
+  .container, .project {
     width: 100%;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -47,7 +47,7 @@
   }
 }
 @media (min-width: 1400px) {
-  .container {
+  .container, .project {
     width: 100%;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -57,13 +57,37 @@
   }
 }
 
+button {
+  outline: none;
+  background: none;
+  border: none;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.75rem;
+}
+button.secondary {
+  background-color: white;
+  border: 1px solid #4F4F4F;
+  color: #2F80ED;
+}
+button.primary {
+  background-color: #2F80ED;
+  border: 1px solid #2F80ED;
+  color: white;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-.experience, .blog, .hobbies, .front-end, .person-info {
+.project-header, .experience, .blog, .hobbies, .front-end, .person-info {
   padding: 1rem;
   background-color: #fff;
   border-radius: 0.75rem;
@@ -75,17 +99,19 @@ body {
   font-weight: 500;
 }
 
-.container {
+.container, .project {
   display: grid;
   gap: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 @media (min-width: 768px) {
-  .container {
+  .container, .project {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 991px) {
-  .container {
+  .container, .project {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -100,10 +126,10 @@ body {
   font-size: 1.125rem;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
+  grid-column: 1/-1;
 }
 @media (min-width: 768px) {
   .person-info {
-    grid-column: span 2;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
   }
@@ -130,6 +156,12 @@ body {
 }
 .person-info .contact {
   color: #4F4F4F;
+}
+.person-info .contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 @media (min-width: 768px) {
   .person-info .contact {
@@ -333,4 +365,122 @@ body {
   line-height: normal;
   padding: 1rem 0;
   margin-bottom: 1rem;
+}
+
+.project-header {
+  grid-column: 1/-1;
+}
+.project-header h2 {
+  color: #4F4F4F;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 1rem;
+}
+.project-header button {
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+.project {
+  grid-column: 1/-1;
+  padding: 0;
+}
+.project .card {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+}
+.project .card img {
+  max-width: 100%;
+}
+.project .card p:first-of-type {
+  color: #4F4F4F;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 1.5rem 0;
+}
+.project .card h2 {
+  color: #333;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 1.25rem;
+}
+.project .card p:last-of-type {
+  color: #828282;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 2.5rem;
+}
+.project .card .btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-right: 2rem;
+}
+.project .card .btns button {
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.project-nav {
+  margin: 1rem 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}
+@media (min-width: 768px) {
+  .project-nav {
+    grid-column: -2;
+  }
+}
+.project-nav a {
+  color: #4F4F4F;
+  padding: 11px 13px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  border: 1px solid #4F4F4F;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 0.25rem;
+}
+.project-nav a .icon {
+  font-size: 0.75rem;
+}
+.project-nav a.active {
+  background-color: #2F80ED;
+  color: #FFFFFF;
+  border: 1px solid #2F80ED;
+}
+.project-nav a:hover:not(.active) {
+  background-color: #DDD;
+}
+
+footer {
+  color: #828282;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0.5rem;
+}
+footer span {
+  font-weight: 700;
+  text-decoration: underline;
 }/*# sourceMappingURL=main.css.map */

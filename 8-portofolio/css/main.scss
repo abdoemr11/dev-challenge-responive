@@ -24,6 +24,8 @@
  .container {
      display: grid;
      gap: 2rem;
+     padding-top: 2rem;
+     padding-bottom: 2rem;
 
      @media($to-mid-grid) {
          grid-template-columns: repeat(2, 1fr);
@@ -46,9 +48,10 @@
      font-size: 1.125rem;
      grid-template-columns: 1fr;
      grid-template-rows: auto;
+     grid-column: 1 / -1;
 
      @media($to-mid-grid) {
-         grid-column: span 2;
+
 
          grid-template-columns: repeat(4, 1fr);
          grid-template-rows: 1fr 1fr
@@ -80,6 +83,13 @@
 
      .contact {
          color: $text-primary;
+
+         p {
+             display: flex;
+             align-items: center;
+             gap: .75rem;
+             margin-bottom: .5rem;
+         }
 
          @media(min-width: 768px) {
              grid-column: 4;
@@ -316,5 +326,143 @@
              padding: 1rem 0;
              margin-bottom: 1rem;
          }
+     }
+ }
+
+ .project-header {
+     @extend %section-general;
+
+     //  @media($to-mid-grid) {
+     //      grid-row: span 2;
+     //  }
+     grid-column: 1 / -1;
+
+     h2 {
+         color: $text-primary;
+         font-size: 1.125rem;
+         font-style: normal;
+         font-weight: 500;
+         line-height: normal;
+         margin-bottom: 1rem;
+     }
+
+     button {
+         margin-bottom: .5rem;
+         margin-right: 1rem;
+     }
+ }
+
+ .project {
+     grid-column: 1 / -1;
+     padding: 0;
+     @extend .container;
+
+     .card {
+         padding: 1rem;
+         background-color: $card-background;
+         border-radius: .75rem;
+
+         img {
+             max-width: 100%;
+         }
+
+         p:first-of-type {
+             color: $text-primary;
+             font-size: 1rem;
+             font-style: normal;
+             font-weight: 500;
+             line-height: normal;
+             margin: 1.5rem 0;
+         }
+
+         h2 {
+             color: #333;
+             font-size: 1.5rem;
+             font-style: normal;
+             font-weight: 500;
+             line-height: normal;
+             margin-bottom: 1.25rem;
+         }
+
+         p:last-of-type {
+             color: $text-secondary;
+             font-size: 1rem;
+             font-style: normal;
+             font-weight: 500;
+             line-height: normal;
+             margin-bottom: 2.5rem;
+         }
+
+         .btns {
+             display: flex;
+             justify-content: space-between;
+             gap: .75rem;
+             margin-right: 2rem;
+
+             button {
+                 margin-bottom: 1rem;
+                 flex: 1;
+             }
+         }
+
+     }
+ }
+
+ .project-nav {
+     margin: 1rem 0;
+     width: fit-content;
+     display: flex;
+     flex-wrap: wrap;
+     gap: .25rem;
+     align-items: center;
+     font-size: 0.75rem;
+     padding: .5rem;
+
+     @media($to-mid-grid) {
+         grid-column: -2;
+     }
+
+     a {
+         color: $text-primary;
+         padding: 11px 13px;
+         text-decoration: none;
+         transition: background-color .5s;
+         border: 1px solid $text-primary;
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: 400;
+         line-height: normal;
+         border-radius: .25rem;
+
+         .icon {
+             font-size: 0.75rem;
+
+         }
+
+         &.active {
+             background-color: #2F80ED;
+             color: #FFFFFF;
+             border: 1px solid #2F80ED;
+         }
+
+         &:hover:not(.active) {
+             background-color: #DDD;
+         }
+     }
+ }
+
+ footer {
+     color: #828282;
+     text-align: center;
+     font-size: 0.875rem;
+     font-family: Montserrat;
+     font-style: normal;
+     font-weight: 500;
+     line-height: normal;
+     padding: .5rem;
+
+     span {
+         font-weight: 700;
+         text-decoration: underline;
      }
  }
