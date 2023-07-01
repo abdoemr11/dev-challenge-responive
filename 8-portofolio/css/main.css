@@ -70,6 +70,9 @@ button {
   padding: 0.5rem 1.25rem;
   border-radius: 0.75rem;
 }
+button:hover {
+  cursor: pointer;
+}
 button.secondary {
   background-color: white;
   border: 1px solid #4F4F4F;
@@ -201,12 +204,23 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (min-width: 991px) {
+  .front-end .stat-container {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
 .front-end h2 {
   color: #4F4F4F;
   font-size: 1.125rem;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+@media (min-width: 991px) {
+  .front-end h2 {
+    margin-bottom: 2rem;
+  }
 }
 .front-end .stat {
   display: flex;

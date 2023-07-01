@@ -65,6 +65,10 @@ button {
     padding: .5rem 1.25rem;
     border-radius: 0.75rem;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     &.secondary {
         background-color: white;
         border: 1px solid $text-primary;
